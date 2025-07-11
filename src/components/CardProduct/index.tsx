@@ -1,4 +1,5 @@
 import { type ProductData } from "../../interfaces"
+import { Link } from "react-router-dom"
 
 interface CardProductProps {
     products: ProductData[]
@@ -9,10 +10,12 @@ export const CardProduct = ({ products }: CardProductProps) => {
         <>
             {products.map((product) => (
                 <div key={product.id} className="flex flex-col gap-4">
-                    <img className="" src={product.image} alt={product.name} />
+                    <Link to={`/product/${product.id}`}>
+                        <img src={product.image} alt={product.name} />
+                    </Link>
 
                     <div className="flex flex-col bg-purple-dark py-10 px-5 rounded-b-[20px] mb-20">
-                        <p>{product.name}</p>
+                        <Link to={`/product/${product.id}`}>{product.name}</Link>
                         <div>
                             <p>Cor: {product.color}</p>
                             {product.size && <p>Tamanho: {product.size}</p>}

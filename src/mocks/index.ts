@@ -13,6 +13,7 @@ export const products = [
         color: 'preta',
         size: 'M',
         price: 89,
+        category: 'Camiseta'
     },
     {
         id: 2,
@@ -21,6 +22,7 @@ export const products = [
         color: 'roxa',
         size: 'G',
         price: 89,
+        category: 'Camiseta'
     },
     {
         id: 3,
@@ -29,6 +31,7 @@ export const products = [
         color: 'preta',
         size: 'P',
         price: 89,
+        category: 'Camiseta'
     },
     {
         id: 4,
@@ -37,6 +40,7 @@ export const products = [
         color: 'roxa',
         size: 'G',
         price: 89,
+        category: 'Camiseta'
     },
     {
         id: 5,
@@ -45,6 +49,7 @@ export const products = [
         color: 'roxa',
         size: null,
         price: 29,
+        category: 'Caneca'
     },
     {
         id: 6,
@@ -53,5 +58,6 @@ export const products = [
         color: 'preta',
         size: null,
         price: 29,
+        category: 'Caneca'
     },
 ]

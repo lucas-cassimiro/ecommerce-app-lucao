@@ -7,7 +7,7 @@ export const HomePage = () => {
     const [filteredProducts, setFilteredProducts] = useState(initialProducts)
 
     return (
-        <div className="gap-8 px-4 mt-20">
+        <div className="gap-8 px-4">
             <aside>
                 <PriceFilter
                     products={initialProducts}

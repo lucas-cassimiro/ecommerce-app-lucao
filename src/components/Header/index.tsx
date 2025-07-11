@@ -1,5 +1,5 @@
 import { useState } from 'react' //useState é um hook do React, usado para criar variáveis que mudam o valor na tela (ou seja, estado).
-
+import { Link } from 'react-router-dom'
 
 // Aqui, ele está importando imagens que serão usadas no cabeçalho.
 import Logo from '../../assets/logo.png'
@@ -29,13 +29,15 @@ export const Header = () => {
 
     // /Tudo dentro de return (...) é o que será exibido na página.
     return (
-        <header className="border-b border-purple-light py-5">
+        <header className="border-b border-purple-light py-5 mb-20">
             <div className="container flex items-center justify-between">
                 <div className="flex gap-4">
                     <button className="sm:hidden" onClick={() => setMenu(true)}>
                         <img src={Menu} alt="Menu de navegação" />
                     </button>
-                    <img src={Logo} alt="Logo da empresa Dev em Dobro" />
+                    <Link to='/'>
+                        <img src={Logo} alt="Logo da empresa Dev em Dobro" />
+                    </Link>
                 </div>
 
                 <MenuMobile menu={menu} setMenu={setMenu} navLinks={navLinks} />
@@ -44,7 +46,7 @@ export const Header = () => {
                     <ul className="flex gap-10">
                         {navLinks.map((nav, index) => (
                             <li key={index}>
-                                <a href={nav.url}>{nav.name}</a>
+                                <Link to={nav.url}>{nav.name}</Link>
                             </li>
                         ))}
                     </ul>
