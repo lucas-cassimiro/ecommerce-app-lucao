@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+@theme {
+    --color-purple-light: #6528D3;
+    --color-purple-dark: #130234;
+    --color-green-gram: #6BB27C;
+}
+
+@layer utilities {
+    .container {
+        margin: 0 auto;
+        padding: 0 1rem;
+    }
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+}
