@@ -1,11 +1,15 @@
 import { type ProductData } from "../../interfaces"
 import { Link } from "react-router-dom"
+import { useContext } from "react"
+import { CartContext } from "../../contexts/CartContext"
 
 interface CardProductProps {
     products: ProductData[]
 }
 
 export const CardProduct = ({ products }: CardProductProps) => {
+    const { addProductIntoCart } = useContext(CartContext)
+
     return (
         <>
             {products.map((product) => (
@@ -27,6 +31,7 @@ export const CardProduct = ({ products }: CardProductProps) => {
                         <button
                             type="button"
                             className="bg-purple-light py-4 rounded-sm cursor-pointer"
+                            onClick={() => addProductIntoCart(product)}
                         >
                             Adicionar ao carrinho
                         </button>
