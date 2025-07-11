@@ -5,4 +5,5 @@ export interface ProductData {
     color: string
     size: string
     price: number
+    category: string
 }
