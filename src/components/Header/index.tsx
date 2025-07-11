@@ -1,4 +1,4 @@
-import { useState } from 'react' //useState é um hook do React, usado para criar variáveis que mudam o valor na tela (ou seja, estado).
+import { useContext, useState } from 'react' //useState é um hook do React, usado para criar variáveis que mudam o valor na tela (ou seja, estado).
 import { Link } from 'react-router-dom'
 
 // Aqui, ele está importando imagens que serão usadas no cabeçalho.
@@ -10,6 +10,7 @@ import User from '../../assets/user.png'
 
 //Aqui está importando outro componente chamado MenuMobile, que provavelmente mostra o menu quando você está no celular.
 import { MenuMobile } from '../MenuMobile'
+import { CartContext } from '../../contexts/CartContext'
 
 //Isso é uma lista de objetos que representa os links do menu de navegação.
 //Cada item tem um name (texto do link) e uma url (para onde vai quando clica).
@@ -26,6 +27,7 @@ const navLinks = [
 //setMenu é a função que muda o valor de menu.
 export const Header = () => {
     const [menu, setMenu] = useState(false)
+    const { cart } = useContext(CartContext)
 
     // /Tudo dentro de return (...) é o que será exibido na página.
     return (
@@ -59,9 +61,12 @@ export const Header = () => {
                     <button className="sm:hidden">
                         <img className='cursor-pointer' src={User} alt="Ícone de usuário" />
                     </button>
-                    <button>
-                        <img className='cursor-pointer' src={Cart} alt="Ícone do carrinho de compras" />
-                    </button>
+                    <div className='relative'>
+                        <Link to='/cart'>
+                            <img className='cursor-pointer' src={Cart} alt="Ícone do carrinho de compras" />
+                        </Link>
+                        <p className='absolute rounded-full px-2 py-0.5 bg-purple-light top-3 left-3 text-xs'>{cart.length}</p>
+                    </div>
                 </div>
             </div>
         </header>
